@@ -860,7 +860,12 @@
                 },
                 body: JSON.stringify(datos)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta del servidor: ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
                     mostrarMensaje(data.message, 'success');

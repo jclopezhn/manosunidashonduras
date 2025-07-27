@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once dirname(__DIR__) . '/config/database.php';
 
 class Donacion {
     private $conn;
@@ -129,4 +129,4 @@ class Donacion {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
-?> 
+?>

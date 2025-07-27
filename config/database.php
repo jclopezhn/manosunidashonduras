@@ -1,12 +1,22 @@
 <?php
 // Configuración de la base de datos MySQL
+
 class Database {
-    private $host = 'switchyard.proxy.rlwy.net';
-    private $db_name = 'railway';
-    private $username = 'root';
-    private $password = 'kBcDffzEIXJWmcZXzwlbQhHIsFsKDSQF';
-    private $conn;
-    //mysql://root:kBcDffzEIXJWmcZXzwlbQhHIsFsKDSQF@switchyard.proxy.rlwy.net:46054/railway
+    // Parámetros de conexión remota
+    private $host = 'if0_39568676_ong_manos_unidas';
+    private $db_name = 'if0_39568676_ong_manos_unidas';
+    private $username = 'if0_39568676';
+    private $password = 'cDLEIKu5GL4U8s';
+
+    // Parámetros de conexión local (opcional, descomentar si se usa localmente)
+    //private $host = 'localhost';
+    //private $db_name = 'ong_manos_unidas';
+    //private $username = 'root';
+    //private $password = '';
+    //private $conn;
+
+    
+    
     // Obtener conexión a la base de datos
     public function getConnection() {
         $this->conn = null;

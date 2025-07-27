@@ -45,6 +45,11 @@ try {
     
     // Procesar donaciones seleccionadas
     $donaciones_seleccionadas = $input['donation'] ?? [];
+
+    // Ensure it's an array
+    if (!is_array($donaciones_seleccionadas)) {
+        $donaciones_seleccionadas = [$donaciones_seleccionadas];
+    }
     
     // Inicializar cantidades en 0
     $donacion->alimentos_cantidad = 0;
@@ -83,7 +88,7 @@ try {
     
     if ($id_donacion) {
         // Enviar email de confirmación (opcional)
-        enviarEmailConfirmacion($donacion);
+        //enviarEmailConfirmacion($donacion);
         
         // Respuesta exitosa
         echo json_encode([
@@ -165,6 +170,6 @@ function enviarEmailConfirmacion($donacion) {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From: ONG Manos Unidas <noreply@manosunidas.org>" . "\r\n";
     
-    mail($to, $subject, $message, $headers);
+    //mail($to, $subject, $message, $headers);
 }
-?> 
+?>
